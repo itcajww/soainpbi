@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <title>Document</title> -->
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+</head>
+<!-- Logo comment below -->
+<body>
+    
+        {% load static %}
+        
+                <div class="container-fluid p-5 bg-dark">
+                    <a href="/" class="navbar-brand"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+                </div>
+        
+                <div class="col-sm p-5">
+                    <h4 class="">{{customername}}</h4>
+                </div>
+
+        <div class="container p-2">
+            <!-- container fluid means 100% and above is 80% -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h5 class="">SOA Table</h5>
+        </div>
+        <div class="col-2">
+            <a href="/export_SOA/?customer={{customername}}" class="btn btn-outline-dark float-right ">Export SOA</a>
+        </div>
+    </div>
+</div>
+<div class="container mt-3">
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+            <tr class="">
+                <th class="">#</th>
+                <th class="">CUSTOMER NAME</th>
+                <th class="">CUSTOMER CODE</th>
+                <th class="">MASTER REF</th>
+                <th class="">HOUSEBILL REF</th>
+                <th class="">DOCUMENT NO</th>
+                <th class="">DOCUMENT DATE</th>
+                <th class="">DUE DAYS</th>
+                <th class="">INVOICE AMOUNT</th>
+                <th class="">BALANCE AMOUNT</th>
+            </tr>
+            <!-- json data we are iterating below, forloop counter will bring t4he iterated serial number -->
+            {% for i in table %} 
+            <tr class="">
+                <td class=""> {{forloop.counter}}</td>
+                <td class=""> {{i.0}}</td>
+                <td class=""> {{i.1}}</td>
+                <td class=""> {{i.2}}</td>
+                <td class=""> {{i.3}}</td>
+                <td class=""> {{i.4}}</td>
+                <td class=""> {{i.5}}</td>
+                <td class=""> {{i.6}}</td>
+                <td class=""> {{i.7}}</td>
+                <td class=""> {{i.8}}</td>
+            </tr>
+
+            {%  endfor %}
+    </table>
+</div>
+
+</div>    
+</div>
+    <!-- <h1>hello world </h1> -->
+    
+    <!-- {% autoescape off %}{{table}}{% endautoescape %}, -->
+    <!-- copy right comment below -->
+    <!-- {{table}} -->
+    <div class="col-sm p-5"></div>
+    <div class="col-sm p-5"></div>
+    <div class="container-fluid p-5 bg-dark mt-5">
+        <p class="text-white text-center">Copyright © All rights reserved by A.J Worldwide Services Inc.</p>
+    </div>
+
+</body>
+</html>
+
+
+<!-- <td class=""> {{forloop.counter}}</td>
+<td class=""> {{i.Date}}</td>
+<td class=""> {{i.Brn}}</td>
+<td class=""> {{i.Type}}</td>
+<td class=""> {{i.Transaction_Number}}</td>
+<td class=""> {{i.Invoiced}}</td>
+<td class=""> {{i.Currency}}</td>
+<td class=""> {{i.DueDate}}</td>
+<td class=""> {{i.TotalDue}}</td>
+<td class=""> {{i.LastInsertOn}}</td>
+</tr> -->
